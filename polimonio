@@ -1,0 +1,38 @@
+def le_e_veifica():
+    """ lê um inteiro e verifica se esta correto retorna o inteiro lido """
+    
+    
+    while True:# laço criado so sai quando o usuario digitar 5 inteiros primeiro polimonio e no segundo
+        try:# vericador 
+            coeficiente = int(input('Digite seus coeficientes: '))# entrada de dados somente de inteiros se nao acontece
+            return coeficiente# retorna coeficiente
+        except ValueError:# se aconteceu o erro ele exibi a mensagem de erro
+            print('O valor informado não é válido, tente novamente.')#mensagem de erro
+
+
+print('Preencha os valores para polimonio 1:')#mensagem para o usuario saber para qual ponimonio esta digitando
+lista1 = [le_e_veifica() for i in range(5)]#armazenamento dos coeficientes1
+
+print('Preencha os valores para polimonio 2:')#mensagem para o usuario saber para qual ponimonio esta digitando
+lista2 = [le_e_veifica() for i in range(5)]# armazenamento dos coeficientes2
+
+
+from numpy import polymul#from numpy import polymul: biblioteca do python,função de operação com polinômios da biblioteca numpy
+def muplicaçao(coeficiente):
+    """ faz a  multiplicaçao dos polimonios  """
+
+    return lista1 and lista2# retorna lista1 e lista2
+res1 = polymul(lista1,1)# mutiplicaçao com elemento neutro
+res2 = polymul(lista1,lista2)# muplicaçao e soma dos resultados 
+print("coeficiente=",res2)# exibiçao dos resultados dos coeficientes
+
+def exibicao(lista, lista2,res2):# saida de dados 
+    """ imprimi a  multiplicaçao dos polimonios  """
+    
+    return len(res2) # ideia grafica de como resultado ficara retornando o tamanho desta lista nomeada res2
+
+print(  "   {}X^4  {}x^3 {}x^2  {}x   {} ".format(lista1[0],lista1[1], lista1[2], lista1[3], lista1[4]))# exibiçao do polimonio 1
+print(end="+  ")
+print(  "{}X^4  {}x^3 {}x^2  {}x   {} ".format(lista2[0],lista2[1], lista2[2], lista2[3], lista2[4]))#exibiçao do polimonio 2
+print("--------------------------------------- ")
+print((" {}"*len(res2)).format(*res2))# exibicao resultado
